@@ -13,7 +13,7 @@
 |**名称** |共鸣灵（心灵伙伴） |
 |**定位** |AI 心理健康助手 |
 |**目标用户** | 在校大学生 |
-|**技术栈** |Python 3.10 + Gradio 5.x + 骆驼-ai + Peewee |
+|**技术栈** |Python 3.10 + Gradio 5.x + Camel-ai + Peewee |
 |**LLM 支持** | 兼容 OpenAI 接口的任意模型（默认 Qwen3-8B） |
 |**数据库** |SQLite（本地） |
 
@@ -175,7 +175,7 @@ Python app.py
 │  Peewee ORM + SQLite                    │
 ├─────────────────────────────────────────┤
 │ API/settings.py （模型层） │
-│ 骆驼爱 → OpenAI SDK → LLM API │
+│ Camel → OpenAI SDK → LLM API │
 └─────────────────────────────────────────┘
 ```
 
