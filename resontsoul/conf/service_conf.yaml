@@ -1,0 +1,8 @@
+llm:
+  model_type: 'Qwen/Qwen3-8B'
+  model_url: 'https://api.siliconflow.cn/v1'
+  api_key: 'sk-qovjmnagmjyqazowjeberuplcqkqxxpfaskeccdoykqsoxsi'
+admin:
+  username: 'admin'
+  password: 'admin@123'
+  name_nick: '系统管理员'

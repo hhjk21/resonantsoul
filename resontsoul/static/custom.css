@@ -1,0 +1,580 @@
+/* ============================================
+   Resonant-Soul 自定义样式
+   ============================================ */
+
+/* --- 全局变量定义 --- */
+:root {
+    --rs-primary: #E8985E;
+    --rs-primary-hover: #D4834A;
+    --rs-secondary: #7FB069;
+    --rs-accent: #5B9BD5;
+    --rs-bg: #FFF8F0;
+    --rs-bg-beige: #F5F0E8;
+    --rs-card: #FFFFFF;
+    --rs-text: #000000;
+    --rs-text-light: #555555;
+    --rs-border: #E8E0D8;
+    --rs-success: #7FB069;
+    --rs-warning: #E8985E;
+    --rs-error: #D46A6A;
+    --rs-radius: 12px;
+    --rs-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* --- 全局背景 --- */
+body, .gradio-container {
+    background: var(--rs-bg) !important;
+}
+
+/* --- 全局文字颜色（仅限文本类元素，不覆盖按钮等） --- */
+.gradio-container label,
+.gradio-container .prose,
+.gradio-container p,
+.gradio-container h1,
+.gradio-container h2,
+.gradio-container h3,
+.gradio-container h4,
+.gradio-container h5,
+.gradio-container h6,
+.gradio-container .svelte-vt1mxs,
+.rs-card,
+.rs-card *,
+.rs-stat-card,
+.rs-stat-card *,
+.rs-feature-card,
+.rs-feature-card *,
+.rs-sas-instruction,
+.rs-sas-instruction *,
+.rs-alert,
+.rs-alert *,
+.rs-footer,
+.rs-table-wrap,
+.rs-table-wrap * {
+    color: #000000;
+}
+
+/* --- 强制覆盖 Gradio 暗色面板 --- */
+.dark, .dark * {
+    --color-bg: var(--rs-card) !important;
+    --color-background: var(--rs-card) !important;
+    --block-background-fill: var(--rs-card) !important;
+    --block-border-color: var(--rs-border) !important;
+}
+
+/* --- 卡片容器 --- */
+.rs-card {
+    background: var(--rs-card);
+    border-radius: var(--rs-radius);
+    box-shadow: var(--rs-shadow);
+    padding: 24px;
+    margin-bottom: 16px;
+    border: 1px solid var(--rs-border);
+}
+
+/* --- 主按钮（柔和暖色） --- */
+button.primary,
+button[variant="primary"] {
+    background: var(--rs-primary) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    color: white !important;
+}
+button.primary:hover,
+button[variant="primary"]:hover {
+    background: var(--rs-primary-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(232,152,94,0.35);
+}
+
+/* --- 次要按钮 --- */
+button.secondary,
+button[variant="secondary"] {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid var(--rs-border) !important;
+    background: white !important;
+    color: #000000 !important;
+}
+button.secondary:hover,
+button[variant="secondary"]:hover {
+    border-color: var(--rs-primary) !important;
+    color: var(--rs-primary) !important;
+}
+
+/* --- 大按钮 --- */
+button.lg {
+    font-size: 1.05em !important;
+    padding: 12px 32px !important;
+}
+
+/* --- 登录页 --- */
+.rs-auth-container {
+    max-width: 520px;
+    margin: 40px auto;
+    text-align: center;
+}
+.rs-auth-hero {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: var(--rs-primary);
+    margin-bottom: 4px;
+    letter-spacing: 2px;
+}
+.rs-auth-subtitle {
+    font-size: 1.1em;
+    color: var(--rs-text-light);
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+/* --- 功能特性卡片 --- */
+.rs-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0 28px;
+}
+.rs-feature-card {
+    background: var(--rs-card);
+    border-radius: var(--rs-radius);
+    padding: 18px 12px;
+    text-align: center;
+    border: 1px solid var(--rs-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.rs-feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--rs-shadow);
+}
+.rs-feature-icon {
+    font-size: 1.8em;
+    margin-bottom: 6px;
+}
+.rs-feature-title {
+    font-weight: 600;
+    color: var(--rs-text);
+    margin-bottom: 2px;
+    font-size: 0.95em;
+}
+.rs-feature-desc {
+    font-size: 0.8em;
+    color: var(--rs-text-light);
+}
+
+/* --- 顶部导航栏（柔和暖色） --- */
+.rs-navbar {
+    background: linear-gradient(135deg, var(--rs-primary), #F0B88A);
+    padding: 14px 24px;
+    border-radius: 0 0 var(--rs-radius) var(--rs-radius);
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(232,152,94,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rs-navbar-title {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.rs-navbar-subtitle {
+    font-size: 0.85em;
+    opacity: 0.75;
+    margin-left: 10px;
+}
+.rs-navbar-user {
+    font-size: 0.9em;
+    opacity: 0.9;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+/* --- 聊天区 --- */
+.rs-chat-container {
+    background: var(--rs-bg-beige);
+    border-radius: var(--rs-radius);
+    box-shadow: var(--rs-shadow);
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ============================================
+   Chatbot 内部样式 - 彻底覆盖所有深色
+   ============================================ */
+
+/* 覆盖 Gradio 主题 CSS 变量，消灭所有深色源头 */
+:root,
+.gradio-container,
+#chat_tab,
+.rs-card {
+    --body-background-fill: #F5F0E8 !important;
+    --block-background-fill: #F5F0E8 !important;
+    --background-fill-primary: #F5F0E8 !important;
+    --background-fill-secondary: #FFFFFF !important;
+    --border-color-primary: #E8E0D8 !important;
+    --border-color-accent: #E8985E !important;
+    --color-accent: #E8985E !important;
+    --color-accent-soft: #FFF0E0 !important;
+    --input-background-fill: #FFFFFF !important;
+    --body-text-color: #000000 !important;
+    --body-text-color-subdued: #555555 !important;
+    --chatbot-text-color: #000000 !important;
+}
+
+/* 覆盖所有可能的 chatbot 容器 */
+#chat_tab,
+#chat_tab > *,
+#chat_tab .tabs,
+#chat_tab .tabitem,
+#chat_tab .tabitem > *,
+#chat_tab .tabitem > * > *,
+#chat_tab .tabitem > * > * > * {
+    background: #F5F0E8 !important;
+}
+
+/* 覆盖 chatbot 父容器 .rs-card 内部 */
+.rs-card,
+.rs-card > *,
+.rs-card .column,
+.rs-card .row {
+    background: #F5F0E8 !important;
+}
+
+/* 直接覆盖所有可能的 chatbot 选择器 */
+.gradio-chatbot,
+[data-testid="chatbot"],
+.chatbot,
+div.gradio-chatbot {
+    background: #F5F0E8 !important;
+    background-color: #F5F0E8 !important;
+}
+
+/* chatbot 内部所有层级的 div 都强制米色 */
+.gradio-chatbot *,
+[data-testid="chatbot"] *,
+.chatbot * {
+    background-color: #F5F0E8 !important;
+}
+
+/* 但消息气泡保留不同颜色 */
+.gradio-chatbot .message,
+[data-testid="chatbot"] .message,
+.chatbot .message {
+    background-color: transparent !important;
+}
+
+/* 用户消息气泡 */
+.gradio-chatbot [class*="user"],
+[data-testid="chatbot"] [class*="user"],
+.chatbot [class*="user"] {
+    background-color: #FFF8F0 !important;
+}
+
+/* bot 消息气泡 */
+.gradio-chatbot [class*="bot"],
+[data-testid="chatbot"] [class*="bot"],
+.gradio-chatbot [class*="assistant"],
+[data-testid="chatbot"] [class*="assistant"],
+.chatbot [class*="bot"],
+.chatbot [class*="assistant"] {
+    background-color: #FFFFFF !important;
+}
+
+/* 文字全部黑色 */
+.gradio-chatbot *,
+[data-testid="chatbot"] *,
+.chatbot * {
+    color: #000000 !important;
+}
+
+/* 按钮文字保持白色 */
+.gradio-chatbot button,
+[data-testid="chatbot"] button,
+.chatbot button {
+    color: white !important;
+}
+
+/* 覆盖所有可能的 svelte 生成的 class */
+[class*="chatbot"] {
+    background: #F5F0E8 !important;
+    background-color: #F5F0E8 !important;
+}
+
+[class*="chatbot"] * {
+    color: #000000 !important;
+}
+
+[class*="chatbot"] [class*="user"] {
+    background-color: #FFF8F0 !important;
+}
+
+[class*="chatbot"] [class*="bot"],
+[class*="chatbot"] [class*="assistant"] {
+    background-color: #FFFFFF !important;
+}
+
+/* ============================================
+   情绪标签
+   ============================================ */
+.rs-emotion-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.78em;
+    font-weight: 500;
+    margin: 1px 2px;
+    white-space: nowrap;
+}
+.rs-emotion-焦虑 { background: #FFE0E0; color: #D32F2F; }
+.rs-emotion-抑郁 { background: #E0E0FF; color: #303F9F; }
+.rs-emotion-愤怒 { background: #FFE0B2; color: #E65100; }
+.rs-emotion-积极 { background: #C8E6C9; color: #2E7D32; }
+.rs-emotion-平静 { background: #E0E0E0; color: #616161; }
+
+/* --- SAS 评估进度条 --- */
+.rs-progress-bar {
+    height: 6px;
+    background: var(--rs-border);
+    border-radius: 3px;
+    margin: 12px 0 20px;
+    overflow: hidden;
+}
+.rs-progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--rs-primary), var(--rs-secondary));
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+/* --- SAS 评分说明卡片 --- */
+.rs-sas-instruction {
+    background: #FFF8F0;
+    text-align: center;
+    padding: 16px;
+    border-radius: var(--rs-radius);
+    margin-bottom: 16px;
+    border: 1px solid var(--rs-border);
+}
+.rs-sas-instruction p {
+    margin: 4px 0;
+}
+
+/* --- 放松训练卡片 --- */
+.rs-relaxation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+}
+.rs-relaxation-card {
+    background: var(--rs-card);
+    border-radius: var(--rs-radius);
+    padding: 22px 14px;
+    text-align: center;
+    border: 2px solid var(--rs-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.rs-relaxation-card:hover {
+    border-color: var(--rs-primary);
+    box-shadow: var(--rs-shadow);
+    transform: translateY(-2px);
+}
+.rs-relaxation-card.selected {
+    border-color: var(--rs-primary);
+    background: #FFF0E0;
+    box-shadow: 0 0 0 3px rgba(232,152,94,0.15);
+}
+
+/* --- 表格美化 --- */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: var(--rs-radius);
+    overflow: hidden;
+}
+table th {
+    background: #F5F0EB;
+    color: #000000;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.9em;
+}
+table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--rs-border);
+    font-size: 0.9em;
+    color: #000000;
+}
+table tr:last-child td {
+    border-bottom: none;
+}
+table tr:hover td {
+    background: #FFF8F0;
+}
+
+/* --- 输入框 --- */
+input[type="text"],
+input[type="password"],
+textarea {
+    border-radius: 8px !important;
+    border: 1px solid var(--rs-border) !important;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    padding: 10px 14px !important;
+    color: #000000 !important;
+    background: #FFFFFF !important;
+}
+input:focus, textarea:focus {
+    border-color: var(--rs-primary) !important;
+    box-shadow: 0 0 0 3px rgba(232,152,94,0.12) !important;
+    outline: none !important;
+}
+input::placeholder,
+textarea::placeholder {
+    color: #999999;
+}
+
+/* --- Tab 标签页 --- */
+.tabs {
+    border-bottom: 2px solid var(--rs-border);
+}
+.tab-nav button {
+    font-weight: 500 !important;
+    color: #555555 !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.2s;
+    padding: 10px 20px !important;
+}
+.tab-nav button.selected {
+    color: var(--rs-primary) !important;
+    border-bottom-color: var(--rs-primary) !important;
+}
+
+/* --- 表格容器 --- */
+.rs-table-wrap {
+    background: var(--rs-card);
+    border-radius: var(--rs-radius);
+    box-shadow: var(--rs-shadow);
+    padding: 16px;
+    border: 1px solid var(--rs-border);
+}
+
+/* --- 对话框滚动条 --- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--rs-border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #CCC;
+}
+
+/* --- 警告提示 --- */
+.rs-alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.rs-alert-warning {
+    background: #FFF3E0;
+    color: #E65100;
+    border-left: 4px solid var(--rs-warning);
+}
+.rs-alert-success {
+    background: #E8F5E9;
+    color: #2E7D32;
+    border-left: 4px solid var(--rs-success);
+}
+.rs-alert-error {
+    background: #FFEBEE;
+    color: #C62828;
+    border-left: 4px solid var(--rs-error);
+}
+
+/* --- 安全警告横幅 --- */
+.rs-security-warning {
+    background: #FFF3E0;
+    border: 1px solid var(--rs-warning);
+    border-radius: var(--rs-radius);
+    padding: 12px 16px;
+    color: #E65100;
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- 统计卡片 --- */
+.rs-stat-card {
+    background: var(--rs-card);
+    border-radius: var(--rs-radius);
+    box-shadow: var(--rs-shadow);
+    padding: 20px;
+    border: 1px solid var(--rs-border);
+    height: 100%;
+}
+
+/* --- 响应式 --- */
+@media (max-width: 768px) {
+    .rs-feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .rs-relaxation-grid {
+        grid-template-columns: 1fr;
+    }
+    .rs-auth-container {
+        max-width: 100%;
+        margin: 20px;
+    }
+    .rs-auth-hero {
+        font-size: 2em;
+    }
+}
+
+/* --- 渐变背景页脚 --- */
+.rs-footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--rs-text-light);
+    font-size: 0.82em;
+    border-top: 1px solid var(--rs-border);
+    margin-top: 32px;
+}
+
+/* --- Radio 隐藏（仅用于数据绑定） --- */
+.rs-hidden-radio {
+    display: none !important;
+}
+
+/* --- 卡片选中态 --- */
+.rs-card-hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.rs-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* --- 主面板背景覆盖 --- */
+#main_panel {
+    background: var(--rs-bg-beige) !important;
+}
+#main_panel > .tabs,
+#main_panel > .tabitem {
+    background: var(--rs-bg-beige) !important;
+}
